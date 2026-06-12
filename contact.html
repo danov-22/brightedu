@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak – B'Right Education & Training</title>
+  <meta name="description" content="Hubungi B'Right Education & Training Jakarta. WhatsApp 0818-862-485. Ruko Italian Walk Blok B No 43, Mall of Indonesia, Kelapa Gading." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .hours-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+      font-size: 0.85rem;
+    }
+    .hours-grid .day { color: var(--text); font-weight: 500; }
+    .hours-grid .time { color: var(--text-muted); }
+    .contact-social-section { padding: 60px 0; background: var(--bg-light); }
+    .social-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .social-card {
+      background: white; border-radius: var(--radius-lg);
+      padding: 28px 20px; text-align: center;
+      border: 1.5px solid var(--border);
+      transition: all var(--transition); cursor: pointer;
+    }
+    .social-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+    .social-card.wa:hover { background: #25D366; color: white; }
+    .social-card.wa:hover .social-card-label { color: white; }
+    .social-card.wa:hover .social-card-sub { color: rgba(255,255,255,0.8); }
+    .social-card.ig:hover { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366); color: white; }
+    .social-card.ig:hover .social-card-label, .social-card.ig:hover .social-card-sub { color: rgba(255,255,255,0.9); }
+    .social-card.yt:hover { background: #FF0000; }
+    .social-card.yt:hover .social-card-label, .social-card.yt:hover .social-card-sub { color: rgba(255,255,255,0.9); }
+    .social-card.ph:hover { background: var(--purple); }
+    .social-card.ph:hover .social-card-label, .social-card.ph:hover .social-card-sub { color: rgba(255,255,255,0.9); }
+    .social-card-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .social-card-label { font-weight: 600; font-size: 0.95rem; color: var(--dark); margin-bottom: 4px; }
+    .social-card-sub { font-size: 0.8rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="/logo.jpg" alt="B'Right Education Logo" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-title">B'Right Education</span>
+          <span class="nav-logo-sub">& Training</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-t="nav_home">Beranda</a>
+        <a href="services.html" class="nav-link" data-t="nav_services">Layanan</a>
+        <a href="gallery.html" class="nav-link" data-t="nav_gallery">Galeri</a>
+        <a href="teachers.html" class="nav-link" data-t="nav_teachers">Pengajar</a>
+        <a href="faq.html" class="nav-link" data-t="nav_faq">FAQ</a>
+        <a href="contact.html" class="nav-link" data-t="nav_contact">Kontak</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+        <a href="#" class="nav-wa" data-wa><span data-t="nav_consult">Konsultasi Gratis</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link" data-t="nav_home">Beranda</a>
+    <a href="services.html" class="mobile-link" data-t="nav_services">Layanan</a>
+    <a href="gallery.html" class="mobile-link" data-t="nav_gallery">Galeri</a>
+    <a href="teachers.html" class="mobile-link" data-t="nav_teachers">Pengajar</a>
+    <a href="faq.html" class="mobile-link" data-t="nav_faq">FAQ</a>
+    <a href="contact.html" class="mobile-link" data-t="nav_contact">Kontak</a>
+    <div class="mobile-actions">
+      <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span data-t="nav_contact">Kontak</span></div>
+    <h1 data-t="contact_hero_title">Hubungi Kami</h1>
+    <p data-t="contact_hero_desc">Kami siap membantu. Hubungi kami dan kami akan segera merespons.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Left: Contact Info -->
+      <div class="contact-info">
+        <div class="contact-card fade-in">
+          <h3 data-t="contact_info_title">Informasi Kontak</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <strong data-t="contact_address_label">Alamat</strong>
+              <span data-t="contact_address">Ruko Italian Walk Blok B No 43, Mall of Indonesia, Kelapa Gading, Jakarta 14240</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <strong data-t="contact_phone_label">WhatsApp / Telepon</strong>
+              <span><a href="tel:+62818862485">0818-862-485</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📸</div>
+            <div class="contact-item-text">
+              <strong>Instagram</strong>
+              <span><a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank">@bright.edutraining_indonesia</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">▶</div>
+            <div class="contact-item-text">
+              <strong>YouTube</strong>
+              <span><a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank">B'Right Education and Training</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card fade-in">
+          <h3 data-t="contact_hours_title">Jam Operasional</h3>
+          <div class="hours-grid">
+            <span class="day">Senin – Sabtu</span><span class="time">08:00 – 17:00 WIB</span>
+            <span class="day">Minggu</span><span class="time">Sesuai Perjanjian</span>
+          </div>
+          <div style="margin-top:20px;padding:16px;background:var(--gold-pale);border-radius:var(--radius);border-left:4px solid var(--gold);">
+            <p style="font-size:0.85rem;color:var(--text);margin:0;">💡 <strong>Konsultasi pertama GRATIS!</strong> Hubungi kami kapan saja via WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="contact-card fade-in">
+          <h3 data-t="contact_follow">Ikuti Kami</h3>
+          <div class="social-links">
+            <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank" class="social-link ig">📸 Instagram</a>
+            <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank" class="social-link yt">▶ YouTube</a>
+            <a href="#" class="social-link wa" data-wa>💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="fade-in fade-in-delay-1">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6268278843624!2d106.9007!3d-6.152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d8f8e1c4ab%3A0x8ee5e5a4b5ec12f5!2sMall%20of%20Indonesia!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="B'Right Education Location"
+          ></iframe>
+          <div class="map-label">
+            <span>📍</span>
+            <div>
+              <strong>B'Right Education & Training</strong><br>
+              <span data-t="contact_address">Ruko Italian Walk Blok B No 43, Mall of Indonesia, Kelapa Gading</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://maps.app.goo.gl/bZXQpJz2pUVCgPny8" target="_blank" class="btn btn-secondary" style="flex:1;justify-content:center;">
+            🗺️ <span data-t="contact_map_label">Buka di Google Maps</span>
+          </a>
+          <a href="#" class="btn btn-primary" data-wa style="flex:1;justify-content:center;">
+            💬 Chat WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL CARDS -->
+<section class="contact-social-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Terhubung</span>
+      <h2>Berbagai Cara Menghubungi Kami</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="social-cards">
+      <a href="#" class="social-card wa" data-wa>
+        <div class="social-card-icon">💬</div>
+        <div class="social-card-label">WhatsApp</div>
+        <div class="social-card-sub">0818-862-485</div>
+      </a>
+      <a href="tel:+62818862485" class="social-card ph">
+        <div class="social-card-icon">📞</div>
+        <div class="social-card-label">Telepon</div>
+        <div class="social-card-sub">0818-862-485</div>
+      </a>
+      <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank" class="social-card ig">
+        <div class="social-card-icon">📸</div>
+        <div class="social-card-label">Instagram</div>
+        <div class="social-card-sub">@bright.edutraining_indonesia</div>
+      </a>
+      <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank" class="social-card yt">
+        <div class="social-card-icon">▶</div>
+        <div class="social-card-label">YouTube</div>
+        <div class="social-card-sub">B'Right Education & Training</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content fade-in">
+      <h2 data-t="cta_title">Siap Memulai Perjalanan?</h2>
+      <p data-t="cta_desc">Konsultasikan dengan kami secara gratis. Awesome Be Champion!</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-primary" data-wa data-t="cta_btn1">Konsultasi via WhatsApp</a>
+        <a href="tel:+62818862485" class="btn btn-white">📞 <span data-t="cta_btn2">Hubungi Kami</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.jpg" alt="B'Right Education & Training" />
+        <div class="footer-brand-name">B'Right Education & Training</div>
+        <div class="footer-brand-sub">Awesome Be Champion!</div>
+        <p data-t="footer_desc">Pusat homeschooling, les privat, dan pelatihan terpadu di Jakarta.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank">📸</a>
+          <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank">▶</a>
+          <a href="#" data-wa>💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col2">Tautan Cepat</h4>
+        <ul>
+          <li><a href="index.html" data-t="nav_home">Beranda</a></li>
+          <li><a href="services.html" data-t="nav_services">Layanan</a></li>
+          <li><a href="gallery.html" data-t="nav_gallery">Galeri</a></li>
+          <li><a href="teachers.html" data-t="nav_teachers">Pengajar</a></li>
+          <li><a href="faq.html" data-t="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" data-t="nav_contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col3">Program</h4>
+        <ul>
+          <li><a href="services.html" data-t="footer_program1">Homeschooling</a></li>
+          <li><a href="services.html" data-t="footer_program2">Les Privat</a></li>
+          <li><a href="services.html" data-t="footer_program3">Kelas Online</a></li>
+          <li><a href="services.html" data-t="footer_program4">Pelatihan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col4">Kontak</h4>
+        <ul>
+          <li><a href="tel:+62818862485">📞 0818-862-485</a></li>
+          <li><a href="#" data-wa>💬 WhatsApp</a></li>
+          <li><a href="contact.html">🗺️ Kelapa Gading, Jakarta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-t="footer_copyright">© 2025 B'Right Education & Training.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bee-float">
+  <div class="bee-speech" data-t="bee_speech">Konsultasi Gratis!</div>
+  <div class="bee-btn" id="bee-btn" role="button" tabindex="0">
+    <svg class="bee-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="62" rx="22" ry="28" fill="#F5C518"/>
+      <ellipse cx="50" cy="55" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="50" cy="69" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="26" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(-20 26 45)"/>
+      <ellipse cx="74" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(20 74 45)"/>
+      <circle cx="50" cy="34" r="16" fill="#F5C518"/>
+      <circle cx="44" cy="31" r="5" fill="white"/><circle cx="56" cy="31" r="5" fill="white"/>
+      <circle cx="45" cy="32" r="3" fill="#1A1A1A"/><circle cx="57" cy="32" r="3" fill="#1A1A1A"/>
+      <path d="M44 39 Q50 44 56 39" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="44" y1="19" x2="38" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="37" cy="7" r="3" fill="#6B3FA0"/>
+      <line x1="56" y1="19" x2="62" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="63" cy="7" r="3" fill="#6B3FA0"/>
+      <rect x="33" y="64" width="20" height="16" rx="2" fill="#6B3FA0" transform="rotate(-10 43 72)"/>
+      <text x="36" y="75" font-size="6" fill="white" font-weight="bold" transform="rotate(-10 40 72)" font-family="Arial">ABC</text>
+      <polygon points="50,88 46,95 54,95" fill="#F5C518"/>
+      <circle cx="78" cy="78" r="13" fill="#25D366"/>
+      <text x="78" y="82" text-anchor="middle" font-size="8" fill="white" font-weight="bold" font-family="Arial">WA</text>
+    </svg>
+  </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>

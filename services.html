@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layanan – B'Right Education & Training</title>
+  <meta name="description" content="Program homeschooling, les privat, kelas online, dan pelatihan di B'Right Education & Training Jakarta." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .services-detail-section { padding: 80px 0; }
+    .service-detail-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; margin-bottom: 80px;
+    }
+    .service-detail-card:nth-child(even) { direction: rtl; }
+    .service-detail-card:nth-child(even) > * { direction: ltr; }
+    .service-detail-content {}
+    .service-detail-content h2 { color: var(--dark); margin-bottom: 12px; }
+    .service-detail-content .divider { margin-left: 0; margin-bottom: 20px; }
+    .service-detail-content p { margin-bottom: 16px; }
+    .service-features { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+    .service-feature {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+    }
+    .service-feature:last-child { border-bottom: none; }
+    .sf-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .sf-text { font-size: 0.9rem; color: var(--text); }
+    .service-detail-visual {
+      background: linear-gradient(135deg, var(--gold-pale), var(--purple-light));
+      border-radius: var(--radius-lg); padding: 60px 40px;
+      text-align: center; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 16px; min-height: 320px;
+      position: relative; overflow: hidden;
+    }
+    .service-detail-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(201,160,48,0.2) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(107,63,160,0.15) 0%, transparent 60%);
+    }
+    .service-detail-visual .big-icon { font-size: 5rem; position: relative; z-index: 1; }
+    .service-detail-visual h3 {
+      font-family: var(--font-heading); font-size: 1.3rem; color: var(--dark);
+      position: relative; z-index: 1;
+    }
+    .service-detail-visual .level-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; border-radius: 50px; padding: 8px 20px;
+      font-size: 0.85rem; font-weight: 600; color: var(--purple);
+      box-shadow: var(--shadow-sm); position: relative; z-index: 1;
+    }
+    .pricing-note {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white; border-radius: var(--radius-lg); padding: 32px;
+      text-align: center; margin-top: 40px;
+    }
+    .pricing-note h3 { color: var(--gold); margin-bottom: 8px; }
+    .pricing-note p { color: rgba(255,255,255,0.8); margin-bottom: 20px; }
+    @media (max-width: 768px) {
+      .service-detail-card { grid-template-columns: 1fr; direction: ltr; }
+      .service-detail-card:nth-child(even) { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="/logo.jpg" alt="B'Right Education Logo" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-title">B'Right Education</span>
+          <span class="nav-logo-sub">& Training</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-t="nav_home">Beranda</a>
+        <a href="services.html" class="nav-link" data-t="nav_services">Layanan</a>
+        <a href="gallery.html" class="nav-link" data-t="nav_gallery">Galeri</a>
+        <a href="teachers.html" class="nav-link" data-t="nav_teachers">Pengajar</a>
+        <a href="faq.html" class="nav-link" data-t="nav_faq">FAQ</a>
+        <a href="contact.html" class="nav-link" data-t="nav_contact">Kontak</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+        <a href="#" class="nav-wa" data-wa><span data-t="nav_consult">Konsultasi Gratis</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link" data-t="nav_home">Beranda</a>
+    <a href="services.html" class="mobile-link" data-t="nav_services">Layanan</a>
+    <a href="gallery.html" class="mobile-link" data-t="nav_gallery">Galeri</a>
+    <a href="teachers.html" class="mobile-link" data-t="nav_teachers">Pengajar</a>
+    <a href="faq.html" class="mobile-link" data-t="nav_faq">FAQ</a>
+    <a href="contact.html" class="mobile-link" data-t="nav_contact">Kontak</a>
+    <div class="mobile-actions">
+      <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span data-t="nav_services">Layanan</span></div>
+    <h1 data-t="services_hero_title">Program & Layanan Kami</h1>
+    <p data-t="services_hero_desc">Solusi pendidikan komprehensif dari TK hingga Perguruan Tinggi.</p>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">🏠</div>
+        <h3 data-t="svc1_title">Homeschooling</h3>
+        <p data-t="svc1_desc">Homeschooling fleksibel dengan kurikulum Nasional dan Cambridge International.</p>
+        <span class="service-tag" data-t="svc1_tag">SD – SMA</span>
+      </div>
+      <div class="service-card fade-in fade-in-delay-1">
+        <div class="service-icon">📚</div>
+        <h3 data-t="svc2_title">Les Privat</h3>
+        <p data-t="svc2_desc">Sistem les semi privat dengan guru berpengalaman di semua mata pelajaran.</p>
+        <span class="service-tag" data-t="svc2_tag">TK – Kuliah</span>
+      </div>
+      <div class="service-card fade-in fade-in-delay-2">
+        <div class="service-icon">💻</div>
+        <h3 data-t="svc3_title">Kelas Online</h3>
+        <p data-t="svc3_desc">Pembelajaran online fleksibel yang sesuai jadwal Anda.</p>
+        <span class="service-tag" data-t="svc3_tag">Semua Level</span>
+      </div>
+      <div class="service-card fade-in fade-in-delay-3">
+        <div class="service-icon">🎓</div>
+        <h3 data-t="svc4_title">Program Pelatihan</h3>
+        <p data-t="svc4_desc">Program pelatihan dan pengembangan keterampilan akademis.</p>
+        <span class="service-tag" data-t="svc4_tag">Semua Usia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED SERVICES -->
+<section class="section section-alt services-detail-section">
+  <div class="container">
+
+    <!-- Homeschooling -->
+    <div class="service-detail-card fade-in" id="homeschooling">
+      <div class="service-detail-content">
+        <span class="section-label">SD – SMA</span>
+        <h2 data-t="svc1_title">Homeschooling</h2>
+        <div class="divider divider-left"></div>
+        <p>Homeschooling dengan 2 pilihan kurikulum baik National maupun International dengan ijazah yang legal dan tersertifikasi. Kami memiliki NPSN dan izin resmi, sehingga ijazah dapat digunakan untuk melanjutkan ke jenjang pendidikan lebih tinggi.</p>
+        <p>Ijazah Cambridge International diterbitkan langsung dari Cambridge Assessment International Education, diakui oleh universitas-universitas terkemuka di seluruh dunia.</p>
+        <div class="service-features">
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Kurikulum Nasional (Kurikulum Merdeka) — ijazah diakui se-Indonesia</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Cambridge International (IGCSE & A-Level) — ijazah langsung dari Cambridge</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">NPSN terdaftar & izin operasional resmi</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Jadwal belajar fleksibel sesuai kebutuhan keluarga</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Tersedia untuk tingkat SD, SMP, dan SMA</span></div>
+        </div>
+        <a href="#" class="btn btn-secondary" data-wa style="margin-top:8px;">Daftar Homeschooling</a>
+      </div>
+      <div class="service-detail-visual">
+        <div class="big-icon">🏠</div>
+        <h3>Homeschooling Program</h3>
+        <div class="level-badge">📖 SD · SMP · SMA</div>
+        <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;">
+          <span style="background:white;padding:6px 14px;border-radius:50px;font-size:0.78rem;font-weight:600;color:var(--purple);box-shadow:var(--shadow-sm);">🇮🇩 Nasional</span>
+          <span style="background:white;padding:6px 14px;border-radius:50px;font-size:0.78rem;font-weight:600;color:var(--purple);box-shadow:var(--shadow-sm);">🌍 Cambridge</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Les Privat -->
+    <div class="service-detail-card fade-in" id="tutoring">
+      <div class="service-detail-content">
+        <span class="section-label">TK – Kuliah</span>
+        <h2 data-t="svc2_title">Les Privat (Semi Privat)</h2>
+        <div class="divider divider-left"></div>
+        <p>Bimbingan belajar dengan sistem semi privat — kelas kecil 2-4 siswa per sesi untuk memastikan perhatian personal yang optimal. Dengan pengalaman mengajar 20 tahun, guru-guru kami memahami cara terbaik untuk setiap gaya belajar anak.</p>
+        <div class="service-features">
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Matematika, IPA, IPS, Bahasa Indonesia & Inggris</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Persiapan ujian (SNBP, SNBT, UN, Try Out)</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Semua jenjang: TK, SD, SMP, SMA, hingga Kuliah</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Jadwal fleksibel — pagi, siang, atau sore</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Laporan perkembangan berkala kepada orang tua</span></div>
+        </div>
+        <a href="#" class="btn btn-secondary" data-wa style="margin-top:8px;">Daftar Les Privat</a>
+      </div>
+      <div class="service-detail-visual">
+        <div class="big-icon">📚</div>
+        <h3>Private Tutoring</h3>
+        <div class="level-badge">🎒 TK – Kuliah</div>
+        <div style="margin-top:16px;background:white;border-radius:var(--radius);padding:16px 20px;text-align:left;box-shadow:var(--shadow-sm);position:relative;z-index:1;">
+          <div style="font-size:0.82rem;font-weight:600;color:var(--dark);margin-bottom:8px;">Mata Pelajaran:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">Matematika</span>
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">IPA</span>
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">B. Inggris</span>
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">Fisika</span>
+            <span style="background:var(--purple-light);color:var(--purple);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">Kimia</span>
+            <span style="background:var(--gold-light);color:var(--gold-dark);padding:3px 10px;border-radius:50px;font-size:0.75rem;font-weight:600;">+Lainnya</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Online Classes -->
+    <div class="service-detail-card fade-in" id="online">
+      <div class="service-detail-content">
+        <span class="section-label">Semua Level</span>
+        <h2 data-t="svc3_title">Kelas Online</h2>
+        <div class="divider divider-left"></div>
+        <p>Kelas online interaktif yang dapat diikuti dari rumah dengan kualitas pengajaran yang sama seperti tatap muka. Cocok untuk siswa yang memiliki keterbatasan jarak atau waktu, namun tetap ingin mendapat bimbingan berkualitas.</p>
+        <div class="service-features">
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Sesi video conference interaktif real-time</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Guru yang sama dengan kelas tatap muka</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Rekaman sesi tersedia untuk ulasan</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Materi digital dan worksheet digital</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Cocok untuk homeschooling & les privat</span></div>
+        </div>
+        <a href="#" class="btn btn-secondary" data-wa style="margin-top:8px;">Daftar Kelas Online</a>
+      </div>
+      <div class="service-detail-visual">
+        <div class="big-icon">💻</div>
+        <h3>Online Learning</h3>
+        <div class="level-badge">🌐 Dari Mana Saja</div>
+      </div>
+    </div>
+
+    <!-- Training -->
+    <div class="service-detail-card fade-in" id="training">
+      <div class="service-detail-content">
+        <span class="section-label">Semua Usia</span>
+        <h2 data-t="svc4_title">Program Pelatihan</h2>
+        <div class="divider divider-left"></div>
+        <p>Program pelatihan intensif untuk mempersiapkan siswa menghadapi berbagai tantangan akademis dan non-akademis. Dari persiapan ujian masuk hingga pengembangan keterampilan belajar yang efektif.</p>
+        <div class="service-features">
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Persiapan SNBP & SNBT (masuk PTN)</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Pelatihan bahasa Inggris (conversational & academic)</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Workshop keterampilan belajar (study skills)</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Persiapan ujian Cambridge (IGCSE/A-Level)</span></div>
+          <div class="service-feature"><span class="sf-icon">✅</span><span class="sf-text">Program intensif liburan sekolah</span></div>
+        </div>
+        <a href="#" class="btn btn-secondary" data-wa style="margin-top:8px;">Info Program Pelatihan</a>
+      </div>
+      <div class="service-detail-visual">
+        <div class="big-icon">🎓</div>
+        <h3>Training Programs</h3>
+        <div class="level-badge">🏅 Intensif & Efektif</div>
+      </div>
+    </div>
+
+    <!-- Pricing CTA -->
+    <div class="pricing-note fade-in">
+      <h3>Harga Terjangkau, Kualitas Terjamin</h3>
+      <p>Hubungi kami untuk informasi biaya program yang transparan dan sesuai kebutuhan Anda. Konsultasi pertama GRATIS!</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#" class="btn btn-primary" data-wa>💬 Tanya Harga via WhatsApp</a>
+        <a href="tel:+62818862485" class="btn btn-white">📞 0818-862-485</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content fade-in">
+      <h2 data-t="cta_title">Siap Memulai Perjalanan Anda?</h2>
+      <p data-t="cta_desc">Konsultasikan dengan kami secara gratis. Awesome Be Champion!</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-primary" data-wa data-t="cta_btn1">Konsultasi via WhatsApp</a>
+        <a href="tel:+62818862485" class="btn btn-white">📞 <span data-t="cta_btn2">Hubungi Kami</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.jpg" alt="B'Right Education & Training" />
+        <div class="footer-brand-name">B'Right Education & Training</div>
+        <div class="footer-brand-sub">Awesome Be Champion!</div>
+        <p data-t="footer_desc">Pusat homeschooling, les privat, dan pelatihan terpadu di Jakarta.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank" title="Instagram">📸</a>
+          <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank" title="YouTube">▶</a>
+          <a href="#" data-wa title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col2">Tautan Cepat</h4>
+        <ul>
+          <li><a href="index.html" data-t="nav_home">Beranda</a></li>
+          <li><a href="services.html" data-t="nav_services">Layanan</a></li>
+          <li><a href="gallery.html" data-t="nav_gallery">Galeri</a></li>
+          <li><a href="teachers.html" data-t="nav_teachers">Pengajar</a></li>
+          <li><a href="faq.html" data-t="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" data-t="nav_contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col3">Program</h4>
+        <ul>
+          <li><a href="#homeschooling" data-t="footer_program1">Homeschooling</a></li>
+          <li><a href="#tutoring" data-t="footer_program2">Les Privat</a></li>
+          <li><a href="#online" data-t="footer_program3">Kelas Online</a></li>
+          <li><a href="#training" data-t="footer_program4">Pelatihan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col4">Kontak</h4>
+        <ul>
+          <li><a href="tel:+62818862485">📞 0818-862-485</a></li>
+          <li><a href="#" data-wa>💬 WhatsApp</a></li>
+          <li><a href="contact.html">🗺️ Kelapa Gading, Jakarta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-t="footer_copyright">© 2025 B'Right Education & Training.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BEE -->
+<div class="bee-float">
+  <div class="bee-speech" data-t="bee_speech">Konsultasi Gratis!</div>
+  <div class="bee-btn" id="bee-btn" role="button" tabindex="0">
+    <svg class="bee-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="62" rx="22" ry="28" fill="#F5C518"/>
+      <ellipse cx="50" cy="55" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="50" cy="69" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="26" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(-20 26 45)"/>
+      <ellipse cx="74" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(20 74 45)"/>
+      <circle cx="50" cy="34" r="16" fill="#F5C518"/>
+      <circle cx="44" cy="31" r="5" fill="white"/><circle cx="56" cy="31" r="5" fill="white"/>
+      <circle cx="45" cy="32" r="3" fill="#1A1A1A"/><circle cx="57" cy="32" r="3" fill="#1A1A1A"/>
+      <circle cx="46" cy="31" r="1" fill="white"/><circle cx="58" cy="31" r="1" fill="white"/>
+      <path d="M44 39 Q50 44 56 39" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="44" y1="19" x2="38" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="37" cy="7" r="3" fill="#6B3FA0"/>
+      <line x1="56" y1="19" x2="62" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="63" cy="7" r="3" fill="#6B3FA0"/>
+      <rect x="33" y="64" width="20" height="16" rx="2" fill="#6B3FA0" transform="rotate(-10 43 72)"/>
+      <text x="36" y="75" font-size="6" fill="white" font-weight="bold" transform="rotate(-10 40 72)" font-family="Arial">ABC</text>
+      <polygon points="50,88 46,95 54,95" fill="#F5C518"/>
+      <circle cx="78" cy="78" r="13" fill="#25D366"/>
+      <text x="78" y="82" text-anchor="middle" font-size="8" fill="white" font-weight="bold" font-family="Arial">WA</text>
+    </svg>
+  </div>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri & Testimoni – B'Right Education & Training</title>
+  <meta name="description" content="Galeri kegiatan belajar, prestasi siswa, dan testimoni orang tua di B'Right Education & Training Jakarta." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .testi-section { padding: 80px 0; background: var(--bg-light); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .gallery-item-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px; padding: 20px;
+      text-align: center;
+    }
+    .gallery-item-placeholder .gi-icon { font-size: 3.5rem; }
+    .gallery-item-placeholder .gi-title { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+    .gallery-item-placeholder .gi-sub { font-size: 0.78rem; color: var(--text-muted); }
+    .gallery-item {
+      cursor: default;
+      background: linear-gradient(135deg, var(--gold-pale) 0%, var(--purple-light) 100%);
+    }
+    .gallery-item[data-category="achievement"] {
+      background: linear-gradient(135deg, #FFF8E7 0%, #F3E8FF 100%);
+    }
+    .gallery-item[data-category="event"] {
+      background: linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%);
+    }
+    .video-section { padding: 80px 0; }
+    .video-placeholder {
+      background: linear-gradient(135deg, var(--dark), var(--purple-dark));
+      border-radius: var(--radius-lg); padding: 80px 40px;
+      text-align: center; color: white; position: relative; overflow: hidden;
+    }
+    .video-placeholder::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(201,160,48,0.15) 0%, transparent 60%);
+    }
+    .video-placeholder h3 { color: var(--gold); margin-bottom: 12px; position: relative; z-index: 1; }
+    .video-placeholder p { color: rgba(255,255,255,0.7); margin-bottom: 24px; position: relative; z-index: 1; }
+    .play-btn {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--gold); display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; cursor: pointer; transition: all var(--transition);
+      position: relative; z-index: 1;
+      box-shadow: 0 0 0 16px rgba(201,160,48,0.2);
+    }
+    .play-btn:hover { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(201,160,48,0.3); }
+    .play-btn svg { margin-left: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="/logo.jpg" alt="B'Right Education Logo" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-title">B'Right Education</span>
+          <span class="nav-logo-sub">& Training</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-t="nav_home">Beranda</a>
+        <a href="services.html" class="nav-link" data-t="nav_services">Layanan</a>
+        <a href="gallery.html" class="nav-link" data-t="nav_gallery">Galeri</a>
+        <a href="teachers.html" class="nav-link" data-t="nav_teachers">Pengajar</a>
+        <a href="faq.html" class="nav-link" data-t="nav_faq">FAQ</a>
+        <a href="contact.html" class="nav-link" data-t="nav_contact">Kontak</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+        <a href="#" class="nav-wa" data-wa><span data-t="nav_consult">Konsultasi Gratis</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link" data-t="nav_home">Beranda</a>
+    <a href="services.html" class="mobile-link" data-t="nav_services">Layanan</a>
+    <a href="gallery.html" class="mobile-link" data-t="nav_gallery">Galeri</a>
+    <a href="teachers.html" class="mobile-link" data-t="nav_teachers">Pengajar</a>
+    <a href="faq.html" class="mobile-link" data-t="nav_faq">FAQ</a>
+    <a href="contact.html" class="mobile-link" data-t="nav_contact">Kontak</a>
+    <div class="mobile-actions">
+      <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span data-t="nav_gallery">Galeri</span></div>
+    <h1 data-t="gallery_hero_title">Galeri & Testimoni</h1>
+    <p data-t="gallery_hero_desc">Kenangan, prestasi, dan cerita dari komunitas belajar kami.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Galeri</span>
+      <h2>Momen Berharga Bersama Kami</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all" data-t="gallery_filter_all">Semua</button>
+      <button class="filter-btn" data-filter="activity" data-t="gallery_filter_activity">Kegiatan Belajar</button>
+      <button class="filter-btn" data-filter="achievement" data-t="gallery_filter_achievement">Prestasi</button>
+      <button class="filter-btn" data-filter="event" data-t="gallery_filter_event">Acara</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in" data-category="activity">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">📖</div>
+          <div class="gi-title">Sesi Belajar Matematika</div>
+          <div class="gi-sub">Kelas Semi Privat</div>
+        </div>
+        <div class="gallery-overlay"><span>Kegiatan Belajar</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1" data-category="achievement">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">🏆</div>
+          <div class="gi-title">Wisuda Homeschooling 2024</div>
+          <div class="gi-sub">Lulusan Nasional & Cambridge</div>
+        </div>
+        <div class="gallery-overlay"><span>Prestasi</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2" data-category="event">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">🎉</div>
+          <div class="gi-title">Open House B'Right</div>
+          <div class="gi-sub">Program Informasi Pendidikan</div>
+        </div>
+        <div class="gallery-overlay"><span>Acara</span></div>
+      </div>
+      <div class="gallery-item fade-in" data-category="activity">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">🔬</div>
+          <div class="gi-title">Praktikum IPA</div>
+          <div class="gi-sub">Eksperimen Sains Menyenangkan</div>
+        </div>
+        <div class="gallery-overlay"><span>Kegiatan Belajar</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1" data-category="achievement">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">🎓</div>
+          <div class="gi-title">Penerima Ijazah Cambridge</div>
+          <div class="gi-sub">IGCSE Graduates 2024</div>
+        </div>
+        <div class="gallery-overlay"><span>Prestasi</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2" data-category="event">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">📝</div>
+          <div class="gi-title">Workshop Belajar Efektif</div>
+          <div class="gi-sub">Study Skills Training</div>
+        </div>
+        <div class="gallery-overlay"><span>Acara</span></div>
+      </div>
+      <div class="gallery-item fade-in" data-category="activity">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">💻</div>
+          <div class="gi-title">Kelas Online Interaktif</div>
+          <div class="gi-sub">Belajar dari Rumah</div>
+        </div>
+        <div class="gallery-overlay"><span>Kegiatan Belajar</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-1" data-category="achievement">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">⭐</div>
+          <div class="gi-title">Siswa Berprestasi 2024</div>
+          <div class="gi-sub">Top Students Recognition</div>
+        </div>
+        <div class="gallery-overlay"><span>Prestasi</span></div>
+      </div>
+      <div class="gallery-item fade-in fade-in-delay-2" data-category="event">
+        <div class="gallery-item-placeholder">
+          <div class="gi-icon">🌟</div>
+          <div class="gi-title">Perayaan Kelulusan</div>
+          <div class="gi-sub">Graduation Ceremony 2024</div>
+        </div>
+        <div class="gallery-overlay"><span>Acara</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">Ikuti kami di media sosial untuk update terbaru dan foto-foto kegiatan!</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank" class="btn btn-secondary" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">📸 Follow Instagram</a>
+        <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank" class="btn btn-secondary" style="background:#FF0000;">▶ YouTube Channel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section section-alt section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">YouTube</span>
+      <h2>Video & Konten Edukasi</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="video-placeholder fade-in">
+      <div class="play-btn" onclick="window.open('https://www.youtube.com/@brighteducationandtraining0909','_blank')">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <h3>Tonton Video Kami di YouTube</h3>
+      <p>Konten edukasi, tips belajar, dan cerita inspiratif dari siswa dan guru B'Right Education & Training.</p>
+      <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank" class="btn btn-primary">▶ Kunjungi Channel YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label" data-t="label_testimonials">Testimoni</span>
+      <h2 data-t="testi_title">Kata Orang Tua & Siswa</h2>
+      <p data-t="testi_desc">Cerita nyata dari keluarga yang mempercayai B'Right Education & Training.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-t="testi1_text">"Anak saya kesulitan matematika, tapi setelah 3 bulan les di B'Right nilainya meningkat drastis. Gurunya sabar dan benar-benar peduli."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">S</div>
+          <div>
+            <div class="author-name" data-t="testi1_name">Sarah M.</div>
+            <div class="author-role" data-t="testi1_role">Orang Tua Siswa Kelas 8</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-t="testi2_text">"Program homeschooling Cambridge sangat luar biasa. Putri saya mendapat ijazah internasional dan kini kuliah di universitas terkemuka di Australia."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">B</div>
+          <div>
+            <div class="author-name" data-t="testi2_name">Budi W.</div>
+            <div class="author-role" data-t="testi2_role">Orang Tua Lulusan Cambridge</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text" data-t="testi3_text">"Jadwal fleksibel, guru berdedikasi, dan hasil nyata. B'Right memberikan kepercayaan diri anak saya. Sangat direkomendasikan!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">L</div>
+          <div>
+            <div class="author-name" data-t="testi3_name">Linda P.</div>
+            <div class="author-role" data-t="testi3_role">Orang Tua – 2 Anak Terdaftar</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Dengan sistem homeschooling B'Right, anak kami bisa belajar dengan ritme sendiri tapi tetap terpantau. Gurunya sangat profesional dan berpengalaman."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">R</div>
+          <div>
+            <div class="author-name">Rini A.</div>
+            <div class="author-role">Orang Tua Siswa SD</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Program persiapan SNBT di B'Right sangat membantu. Anak saya akhirnya diterima di universitas negeri impiannya!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">D</div>
+          <div>
+            <div class="author-name">Dian K.</div>
+            <div class="author-role">Orang Tua Mahasiswa</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Kelas online B'Right sangat interaktif dan menyenangkan. Walau dari rumah, anak saya tetap semangat belajar setiap hari."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">Y</div>
+          <div>
+            <div class="author-name">Yanti S.</div>
+            <div class="author-role">Orang Tua Siswa SMP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content fade-in">
+      <h2 data-t="cta_title">Siap Bergabung?</h2>
+      <p>Jadilah bagian dari keluarga besar B'Right Education & Training. Awesome Be Champion!</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-primary" data-wa data-t="cta_btn1">Konsultasi via WhatsApp</a>
+        <a href="tel:+62818862485" class="btn btn-white">📞 <span data-t="cta_btn2">Hubungi Kami</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.jpg" alt="B'Right Education & Training" />
+        <div class="footer-brand-name">B'Right Education & Training</div>
+        <div class="footer-brand-sub">Awesome Be Champion!</div>
+        <p data-t="footer_desc">Pusat homeschooling, les privat, dan pelatihan terpadu di Jakarta.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank">📸</a>
+          <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank">▶</a>
+          <a href="#" data-wa>💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col2">Tautan Cepat</h4>
+        <ul>
+          <li><a href="index.html" data-t="nav_home">Beranda</a></li>
+          <li><a href="services.html" data-t="nav_services">Layanan</a></li>
+          <li><a href="gallery.html" data-t="nav_gallery">Galeri</a></li>
+          <li><a href="teachers.html" data-t="nav_teachers">Pengajar</a></li>
+          <li><a href="faq.html" data-t="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" data-t="nav_contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col3">Program</h4>
+        <ul>
+          <li><a href="services.html" data-t="footer_program1">Homeschooling</a></li>
+          <li><a href="services.html" data-t="footer_program2">Les Privat</a></li>
+          <li><a href="services.html" data-t="footer_program3">Kelas Online</a></li>
+          <li><a href="services.html" data-t="footer_program4">Pelatihan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col4">Kontak</h4>
+        <ul>
+          <li><a href="tel:+62818862485">📞 0818-862-485</a></li>
+          <li><a href="#" data-wa>💬 WhatsApp</a></li>
+          <li><a href="contact.html">🗺️ Kelapa Gading, Jakarta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-t="footer_copyright">© 2025 B'Right Education & Training.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bee-float">
+  <div class="bee-speech" data-t="bee_speech">Konsultasi Gratis!</div>
+  <div class="bee-btn" id="bee-btn" role="button" tabindex="0">
+    <svg class="bee-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="62" rx="22" ry="28" fill="#F5C518"/>
+      <ellipse cx="50" cy="55" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="50" cy="69" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="26" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(-20 26 45)"/>
+      <ellipse cx="74" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(20 74 45)"/>
+      <circle cx="50" cy="34" r="16" fill="#F5C518"/>
+      <circle cx="44" cy="31" r="5" fill="white"/><circle cx="56" cy="31" r="5" fill="white"/>
+      <circle cx="45" cy="32" r="3" fill="#1A1A1A"/><circle cx="57" cy="32" r="3" fill="#1A1A1A"/>
+      <path d="M44 39 Q50 44 56 39" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="44" y1="19" x2="38" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="37" cy="7" r="3" fill="#6B3FA0"/>
+      <line x1="56" y1="19" x2="62" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="63" cy="7" r="3" fill="#6B3FA0"/>
+      <rect x="33" y="64" width="20" height="16" rx="2" fill="#6B3FA0" transform="rotate(-10 43 72)"/>
+      <text x="36" y="75" font-size="6" fill="white" font-weight="bold" transform="rotate(-10 40 72)" font-family="Arial">ABC</text>
+      <polygon points="50,88 46,95 54,95" fill="#F5C518"/>
+      <circle cx="78" cy="78" r="13" fill="#25D366"/>
+      <text x="78" y="82" text-anchor="middle" font-size="8" fill="white" font-weight="bold" font-family="Arial">WA</text>
+    </svg>
+  </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>

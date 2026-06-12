@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengajar – B'Right Education & Training</title>
+  <meta name="description" content="Tim pengajar berpengalaman B'Right Education & Training Jakarta. Guru profesional untuk homeschooling, les privat, dan pelatihan." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .join-section {
+      background: linear-gradient(135deg, var(--gold-pale), var(--purple-light));
+      padding: 80px 0;
+    }
+    .join-card {
+      background: white; border-radius: var(--radius-lg);
+      padding: 48px; text-align: center; max-width: 640px; margin: 0 auto;
+      box-shadow: var(--shadow-md); border: 1.5px solid var(--border);
+    }
+    .join-card h2 { color: var(--dark); margin-bottom: 12px; }
+    .join-card p { margin-bottom: 28px; }
+    .qualifications {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px; margin-top: 40px;
+    }
+    .qual-card {
+      background: white; border-radius: var(--radius);
+      padding: 24px; border: 1.5px solid var(--border);
+      text-align: center; transition: all var(--transition);
+    }
+    .qual-card:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); transform: translateY(-4px); }
+    .qual-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .qual-title { font-size: 0.95rem; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+    .qual-desc { font-size: 0.82rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="/logo.jpg" alt="B'Right Education Logo" />
+        <div class="nav-logo-text">
+          <span class="nav-logo-title">B'Right Education</span>
+          <span class="nav-logo-sub">& Training</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" data-t="nav_home">Beranda</a>
+        <a href="services.html" class="nav-link" data-t="nav_services">Layanan</a>
+        <a href="gallery.html" class="nav-link" data-t="nav_gallery">Galeri</a>
+        <a href="teachers.html" class="nav-link" data-t="nav_teachers">Pengajar</a>
+        <a href="faq.html" class="nav-link" data-t="nav_faq">FAQ</a>
+        <a href="contact.html" class="nav-link" data-t="nav_contact">Kontak</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+        <a href="#" class="nav-wa" data-wa><span data-t="nav_consult">Konsultasi Gratis</span></a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-link" data-t="nav_home">Beranda</a>
+    <a href="services.html" class="mobile-link" data-t="nav_services">Layanan</a>
+    <a href="gallery.html" class="mobile-link" data-t="nav_gallery">Galeri</a>
+    <a href="teachers.html" class="mobile-link" data-t="nav_teachers">Pengajar</a>
+    <a href="faq.html" class="mobile-link" data-t="nav_faq">FAQ</a>
+    <a href="contact.html" class="mobile-link" data-t="nav_contact">Kontak</a>
+    <div class="mobile-actions">
+      <button class="lang-btn lang-toggle-btn"><span class="lang-current-flag">🇮🇩</span><span class="lang-toggle-label">EN</span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><span data-t="nav_teachers">Pengajar</span></div>
+    <h1 data-t="teachers_hero_title">Tim Pengajar Kami</h1>
+    <p data-t="teachers_hero_desc">Pendidik yang bersemangat dan berpengalaman, berkomitmen pada kesuksesan anak Anda.</p>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Tim Kami</span>
+      <h2 data-t="teachers_title">Kenali Pengajar Kami</h2>
+      <p data-t="teachers_desc">Tim guru yang bersemangat dan berkualifikasi dengan pengalaman bertahun-tahun di semua mata pelajaran.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="teachers-grid">
+      <div class="teacher-card fade-in">
+        <div class="teacher-photo"><div class="teacher-avatar">A</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ibu Anis, S.Pd.</div>
+          <div class="teacher-subject">Matematika & IPA</div>
+          <p class="teacher-bio">Berpengalaman 15 tahun mengajar matematika untuk SD-SMA. Spesialis persiapan ujian SNBP & SNBT.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in fade-in-delay-1">
+        <div class="teacher-photo"><div class="teacher-avatar">B</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Bpk. Budi, M.Ed.</div>
+          <div class="teacher-subject">Bahasa Inggris</div>
+          <p class="teacher-bio">Master pendidikan bahasa dari universitas terkemuka. Instruktur Cambridge bersertifikat dengan pengalaman 12 tahun.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in fade-in-delay-2">
+        <div class="teacher-photo"><div class="teacher-avatar">C</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ibu Citra, S.Si.</div>
+          <div class="teacher-subject">Fisika & Kimia</div>
+          <p class="teacher-bio">Lulusan Teknik Fisika ITB dengan pengalaman mengajar 10 tahun. Pendekatan belajar berbasis eksperimen.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in">
+        <div class="teacher-photo"><div class="teacher-avatar">D</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Bpk. Dani, S.Pd.</div>
+          <div class="teacher-subject">Bahasa Indonesia & Sejarah</div>
+          <p class="teacher-bio">Pengajar Bahasa Indonesia berpengalaman dengan metode pembelajaran kreatif dan inovatif untuk semua usia.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in fade-in-delay-1">
+        <div class="teacher-photo"><div class="teacher-avatar">E</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ibu Eka, M.Pd.</div>
+          <div class="teacher-subject">Koordinator Homeschooling</div>
+          <p class="teacher-bio">Koordinator program homeschooling dengan keahlian kurikulum Nasional dan Cambridge. Pengalaman 18 tahun.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in fade-in-delay-2">
+        <div class="teacher-photo"><div class="teacher-avatar">F</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ibu Fitri, S.Pd.</div>
+          <div class="teacher-subject">Guru TK & SD Awal</div>
+          <p class="teacher-bio">Spesialis pendidikan anak usia dini dengan pendekatan bermain sambil belajar. Sabar dan penuh kreativitas.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in">
+        <div class="teacher-photo"><div class="teacher-avatar">G</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Bpk. Gilang, S.Kom.</div>
+          <div class="teacher-subject">Informatika & Coding</div>
+          <p class="teacher-bio">Instruktur teknologi informasi dan pemrograman dasar untuk siswa SMP-SMA. Metode hands-on learning.</p>
+        </div>
+      </div>
+      <div class="teacher-card fade-in fade-in-delay-1">
+        <div class="teacher-photo"><div class="teacher-avatar">H</div></div>
+        <div class="teacher-info">
+          <div class="teacher-name">Ibu Hana, S.Pd.</div>
+          <div class="teacher-subject">Biologi & IPA SD-SMP</div>
+          <p class="teacher-bio">Pengajar biologi yang bersemangat dengan cara belajar yang menyenangkan dan mudah dipahami.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Standar Kami</span>
+      <h2>Kualifikasi & Standar Pengajar</h2>
+      <p>Setiap guru di B'Right Education & Training dipilih melalui proses seleksi ketat untuk memastikan kualitas terbaik.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="qualifications">
+      <div class="qual-card fade-in">
+        <div class="qual-icon">🎓</div>
+        <div class="qual-title">Pendidikan S1/S2</div>
+        <div class="qual-desc">Semua pengajar minimal lulusan sarjana di bidang pendidikan atau keahlian terkait</div>
+      </div>
+      <div class="qual-card fade-in fade-in-delay-1">
+        <div class="qual-icon">📋</div>
+        <div class="qual-title">Bersertifikat</div>
+        <div class="qual-desc">Memiliki sertifikasi pendidik atau keahlian khusus yang relevan</div>
+      </div>
+      <div class="qual-card fade-in fade-in-delay-2">
+        <div class="qual-icon">⏰</div>
+        <div class="qual-title">Pengalaman 5+ Tahun</div>
+        <div class="qual-desc">Minimum 5 tahun pengalaman mengajar di bidang masing-masing</div>
+      </div>
+      <div class="qual-card fade-in">
+        <div class="qual-icon">💛</div>
+        <div class="qual-title">Dedikasi Tinggi</div>
+        <div class="qual-desc">Berkomitmen pada perkembangan optimal setiap siswa dengan penuh kasih sayang</div>
+      </div>
+      <div class="qual-card fade-in fade-in-delay-1">
+        <div class="qual-icon">🔄</div>
+        <div class="qual-title">Pelatihan Berkala</div>
+        <div class="qual-desc">Mengikuti pelatihan dan workshop pendidikan terbaru secara rutin</div>
+      </div>
+      <div class="qual-card fade-in fade-in-delay-2">
+        <div class="qual-icon">📊</div>
+        <div class="qual-title">Evaluasi Rutin</div>
+        <div class="qual-desc">Dievaluasi secara berkala untuk memastikan standar pengajaran tetap tinggi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN SECTION -->
+<section class="join-section">
+  <div class="container">
+    <div class="join-card fade-in">
+      <div style="font-size:3rem;margin-bottom:16px;">👩‍🏫</div>
+      <h2 data-t="teachers_join_title">Bergabung dengan Tim Kami</h2>
+      <p data-t="teachers_join_desc">Apakah Anda pengajar yang bersemangat? Kami selalu mencari guru berbakat untuk bergabung dengan B'Right Education & Training.</p>
+      <a href="#" class="btn btn-secondary" data-wa data-t="teachers_join_btn">Lamar via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content fade-in">
+      <h2 data-t="cta_title">Siap Belajar Bersama Kami?</h2>
+      <p data-t="cta_desc">Konsultasikan kebutuhan belajar anak Anda dengan tim kami. Awesome Be Champion!</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-primary" data-wa data-t="cta_btn1">Konsultasi via WhatsApp</a>
+        <a href="tel:+62818862485" class="btn btn-white">📞 <span data-t="cta_btn2">Hubungi Kami</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.jpg" alt="B'Right Education & Training" />
+        <div class="footer-brand-name">B'Right Education & Training</div>
+        <div class="footer-brand-sub">Awesome Be Champion!</div>
+        <p data-t="footer_desc">Pusat homeschooling, les privat, dan pelatihan terpadu di Jakarta.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bright.edutraining_indonesia/" target="_blank">📸</a>
+          <a href="https://www.youtube.com/@brighteducationandtraining0909" target="_blank">▶</a>
+          <a href="#" data-wa>💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col2">Tautan Cepat</h4>
+        <ul>
+          <li><a href="index.html" data-t="nav_home">Beranda</a></li>
+          <li><a href="services.html" data-t="nav_services">Layanan</a></li>
+          <li><a href="gallery.html" data-t="nav_gallery">Galeri</a></li>
+          <li><a href="teachers.html" data-t="nav_teachers">Pengajar</a></li>
+          <li><a href="faq.html" data-t="nav_faq">FAQ</a></li>
+          <li><a href="contact.html" data-t="nav_contact">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col3">Program</h4>
+        <ul>
+          <li><a href="services.html" data-t="footer_program1">Homeschooling</a></li>
+          <li><a href="services.html" data-t="footer_program2">Les Privat</a></li>
+          <li><a href="services.html" data-t="footer_program3">Kelas Online</a></li>
+          <li><a href="services.html" data-t="footer_program4">Pelatihan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-t="footer_col4">Kontak</h4>
+        <ul>
+          <li><a href="tel:+62818862485">📞 0818-862-485</a></li>
+          <li><a href="#" data-wa>💬 WhatsApp</a></li>
+          <li><a href="contact.html">🗺️ Kelapa Gading, Jakarta</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-t="footer_copyright">© 2025 B'Right Education & Training.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bee-float">
+  <div class="bee-speech" data-t="bee_speech">Konsultasi Gratis!</div>
+  <div class="bee-btn" id="bee-btn" role="button" tabindex="0">
+    <svg class="bee-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="50" cy="62" rx="22" ry="28" fill="#F5C518"/>
+      <ellipse cx="50" cy="55" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="50" cy="69" rx="22" ry="7" fill="#1A1A1A"/>
+      <ellipse cx="26" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(-20 26 45)"/>
+      <ellipse cx="74" cy="45" rx="16" ry="10" fill="rgba(180,220,255,0.85)" transform="rotate(20 74 45)"/>
+      <circle cx="50" cy="34" r="16" fill="#F5C518"/>
+      <circle cx="44" cy="31" r="5" fill="white"/><circle cx="56" cy="31" r="5" fill="white"/>
+      <circle cx="45" cy="32" r="3" fill="#1A1A1A"/><circle cx="57" cy="32" r="3" fill="#1A1A1A"/>
+      <path d="M44 39 Q50 44 56 39" stroke="#1A1A1A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line x1="44" y1="19" x2="38" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="37" cy="7" r="3" fill="#6B3FA0"/>
+      <line x1="56" y1="19" x2="62" y2="8" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="63" cy="7" r="3" fill="#6B3FA0"/>
+      <rect x="33" y="64" width="20" height="16" rx="2" fill="#6B3FA0" transform="rotate(-10 43 72)"/>
+      <text x="36" y="75" font-size="6" fill="white" font-weight="bold" transform="rotate(-10 40 72)" font-family="Arial">ABC</text>
+      <polygon points="50,88 46,95 54,95" fill="#F5C518"/>
+      <circle cx="78" cy="78" r="13" fill="#25D366"/>
+      <text x="78" y="82" text-anchor="middle" font-size="8" fill="white" font-weight="bold" font-family="Arial">WA</text>
+    </svg>
+  </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
