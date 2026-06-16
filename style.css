@@ -775,3 +775,71 @@ footer {
   .cta-btns { flex-direction: column; align-items: center; }
   .why-badge-row { grid-template-columns: 1fr; }
 }
+
+/* --- PURE CSS LIGHTBOX SYSTEM --- */
+
+/* Hide the technical checkbox controller entirely */
+.zoom-checkbox {
+  display: none !important;
+}
+
+/* Ensure the image pointer reveals it can be clicked */
+.logo-click-wrapper {
+  cursor: pointer !important;
+  display: inline-block;
+}
+
+/* 1. THE HIDDEN FULL SCREEN BACKDROP FRAME */
+.pure-css-modal {
+  display: none; /* Kept completely hidden until clicked */
+  position: fixed !important;
+  inset: 0 !important;
+  background-color: rgba(11, 27, 61, 0.95) !important; /* Rich theme navy mask overlay */
+  z-index: 999999 !important; /* Floats safely over the top navigation bar */
+  align-items: center !important;
+  justify-content: center !important;
+  backdrop-filter: blur(10px) !important; /* Smooth glass blur effect */
+  cursor: zoom-out !important;
+}
+
+/* 2. THE EXPANDED LOGO CARD IMAGE */
+.pure-css-modal-img {
+  max-width: 85% !important;
+  max-height: 80vh !important;
+  object-fit: contain !important;
+  background: #ffffff !important; /* Crisp white asset outline card block */
+  padding: 24px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  transform: scale(0.9);
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* 3. THE CLOSE CROSS ICON */
+.pure-css-close {
+  position: absolute !important;
+  top: 30px !important;
+  right: 40px !important;
+  color: #ffffff !important;
+  font-size: 48px !important;
+  font-family: Arial, sans-serif !important;
+}
+
+/* --- THE MAGIC TRICK TOGGLE --- */
+/* When the checkbox is ticked by clicking the logo label, display the modal overlay */
+.zoom-checkbox:checked + .logo-click-wrapper .pure-css-modal {
+  display: flex !important;
+}
+
+/* Animate the inner graphic card to swell up smoothly on open */
+.zoom-checkbox:checked + .logo-click-wrapper .pure-css-modal-img {
+  transform: scale(1) !important;
+}
+
+/* --- OPTIONAL: HOVER ZOOM ON THE HERO HERO IMAGE --- */
+.hero-large-logo {
+  transition: transform 0.3s ease !important;
+}
+.hero-large-logo:hover {
+  transform: scale(1.05) !important;
+}

@@ -15,7 +15,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/brightedu.jpg" alt="B'Right Education Logo" />
+        <img src="images/brightedu.jpg" class="hero-large-logo" alt="B'Right Logo">
         <div class="nav-logo-text">
           <span class="nav-logo-title">B'Right</span>
           <span class="nav-logo-sub">Education & Training</span>
@@ -112,6 +112,22 @@
     </div>
   </div>
 </section>
+
+<!-- 1. THE CHECKBOX (Acts as the toggle switch) -->
+<input type="checkbox" id="logo-zoom-toggle" class="zoom-checkbox">
+
+<!-- 2. THE LOGO CONTAINER -->
+<label for="logo-zoom-toggle" class="logo-click-wrapper">
+  <!-- This is your existing circular logo image -->
+  <img src="assets/images/logo.png" class="hero-large-logo" alt="B'Right Logo">
+  
+  <!-- 3. THE LIGHTBOX OVERLAY (Renders inside the label frame) -->
+  <span class="pure-css-modal">
+    <span class="pure-css-close">&times;</span>
+    <img src="assets/images/logo.png" class="pure-css-modal-img" alt="Enlarged View">
+  </span>
+</label>
+
 
 <!-- ===== ABOUT STRIP ===== -->
 <div class="about-strip">
@@ -448,6 +464,48 @@
     </svg>
   </div>
 </div>
+
+<!-- THE MODAL HTML STRUCTURE -->
+<div id="logoModal" class="logo-modal">
+  <span class="logo-modal-close">&times;</span>
+  <img class="logo-modal-content" id="modalImg" alt="Enlarged View">
+</div>
+
+<!-- THE COMPATIBLE EVENT LISTENER SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const heroImg = document.querySelector(".hero-large-logo");
+  const modal = document.getElementById("logoModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".logo-modal-close");
+
+  // Verify everything exists before executing listeners
+  if (heroImg && modal && modalImg) {
+    
+    // 1. Click to open modal view
+    heroImg.addEventListener("click", function() {
+      modal.style.display = "flex";
+      modalImg.src = heroImg.src; // Automatically grabs the local folder link
+      
+      setTimeout(function() {
+        modal.classList.add("show");
+      }, 20);
+    });
+
+    // 2. Click backdrop background to close
+    modal.addEventListener("click", function(event) {
+      // Prevent closing if clicking directly inside the logo card itself
+      if (event.target === modal || event.target === closeBtn) {
+        modal.classList.remove("show");
+        
+        setTimeout(function() {
+          modal.style.display = "none";
+        }, 300);
+      }
+    });
+  }
+});
+</script>
 
 <script src="script.js"></script>
 </body>
